@@ -73,7 +73,5 @@ export class GifsService {
         this.resultados = resp.data;
         localStorage.setItem('resultado', JSON.stringify(this.resultados));
       });
-
-    console.log(this._historial);
   }
 }
