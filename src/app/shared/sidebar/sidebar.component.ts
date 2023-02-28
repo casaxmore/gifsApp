@@ -19,4 +19,9 @@ export class SidebarComponent {
     this.gifsService.buscarGifs(valor);
   }
 
+  borrarHistorial() {
+    this.gifsService.deleteLocalStorage();
+    this.gifsService.resultados = [];
+  }
+
 }

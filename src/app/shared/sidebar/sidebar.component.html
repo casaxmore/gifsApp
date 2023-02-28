@@ -12,5 +12,8 @@
        >
        {{histo | titlecase}}
        </a>
+       <button *ngIf="historial.length > 0" class="btn btn-danger" type="button" (click)="borrarHistorial()">
+        Borrar Historial
+      </button>
   </div>
 </div>

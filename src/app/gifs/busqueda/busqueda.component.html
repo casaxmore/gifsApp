@@ -1,8 +1,20 @@
 <h5>Buscar:</h5>
-<input
+<!-- <input
   type="text"
   class="form-control"
   placeholder="Buscar gifs..."
   (keyup.enter)="buscar()"
   #txtBuscar
- />
+ /> -->
+ <div class="input-group">
+  <input type="text"
+  class="form-control"
+  placeholder="Buscar gifs..."
+  (keyup.enter)="buscar()"
+  #txtBuscar>
+  <span class="input-group-btn">
+    <button class="btn btn-dark" type="button" (click)="buscar()">
+      Buscar
+    </button>
+  </span>
+</div>
