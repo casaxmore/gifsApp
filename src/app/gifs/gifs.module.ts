@@ -5,6 +5,7 @@ import { ScrollingModule } from "@angular/cdk/scrolling";
 import { GifsPageComponent } from './gifs-page/gifs-page.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { ResultadosComponent } from './resultados/resultados.component';
+import { FiltroPipe } from './pipes/filtro.pipe';
 
 
 
@@ -12,7 +13,8 @@ import { ResultadosComponent } from './resultados/resultados.component';
   declarations: [
     GifsPageComponent,
     BusquedaComponent,
-    ResultadosComponent
+    ResultadosComponent,
+    FiltroPipe
   ],
   imports: [
     CommonModule,

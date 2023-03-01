@@ -3,9 +3,18 @@
     {{gif.title}}
   </li>
 </ul> -->
-
+<button class="btn btn-dark" (click)="prevPage()" *ngIf="resultados.length > 0">Anteriores</button>
+  &nbsp;
+  <button
+    class="btn btn-dark"
+    (click)="nextPage()"
+    *ngIf="resultados.length > 0"
+    [disabled]="(resultados | filtro : page : search).length === 0"
+  >
+    Siguientes
+  </button>
 <div class="row mt-5">
-  <div *ngFor="let gif of resultados"
+  <div *ngFor="let gif of resultados | filtro : page : search"
        class="col-md-4 col-sm-6 animate__animated animate__fadeIn">
 
     <div class="card">

@@ -10,9 +10,12 @@ export class BusquedaComponent {
 
   @ViewChild('txtBuscar') txtBuscar!:ElementRef<HTMLInputElement>;
 
+  vButton: boolean = true;
+
   constructor( private gifsService: GifsService ){}
 
   buscar(){
+    this.vButton = true;
     const valor = this.txtBuscar.nativeElement.value;
 
     // Condición para no pintar espacios en blanco
@@ -24,6 +27,10 @@ export class BusquedaComponent {
     this.gifsService.buscarGifs(valor);
 
     this.txtBuscar.nativeElement.value = '';
+  }
+
+  validatorButton() {
+    this.vButton = false;
   }
 
 }
