@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ScrollingModule } from "@angular/cdk/scrolling";
+
 import { GifsPageComponent } from './gifs-page/gifs-page.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { ResultadosComponent } from './resultados/resultados.component';
@@ -13,10 +15,11 @@ import { ResultadosComponent } from './resultados/resultados.component';
     ResultadosComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ScrollingModule
   ],
   exports: [
-    GifsPageComponent
+    GifsPageComponent,
   ]
 })
 export class GifsModule { }
