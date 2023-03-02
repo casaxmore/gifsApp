@@ -19,6 +19,7 @@ export class ResultadosComponent {
 
   nextPage() {
     this.page += 5
+    console.log('Paginas: ', this.page);
   }
 
   prevPage() {

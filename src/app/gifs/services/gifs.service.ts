@@ -78,4 +78,5 @@ export class GifsService {
     localStorage.clear();
     this._historial = [];
   }
+
 }

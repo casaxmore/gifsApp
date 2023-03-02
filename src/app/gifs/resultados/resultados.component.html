@@ -3,30 +3,42 @@
     {{gif.title}}
   </li>
 </ul> -->
-<button class="btn btn-dark" (click)="prevPage()" *ngIf="resultados.length > 0">Anteriores</button>
-  &nbsp;
-  <button
-    class="btn btn-dark"
-    (click)="nextPage()"
-    *ngIf="resultados.length > 0"
-    [disabled]="(resultados | filtro : page : search).length === 0"
+<div class="row mt-2">
+  <div
+    *ngFor="let gif of resultados | filtro : page : search"
+    class="col-md-4 col-sm-6 animate__animated animate__fadeIn"
   >
-    Siguientes
-  </button>
-<div class="row mt-5">
-  <div *ngFor="let gif of resultados | filtro : page : search"
-       class="col-md-4 col-sm-6 animate__animated animate__fadeIn">
-
     <div class="card">
-      <img [src]="gif.images.downsized_medium.url"
-           [alt]="gif.title"
-           class="card-img-top">
+      <img
+        [src]="gif.images.downsized_medium.url"
+        [alt]="gif.title"
+        class="card-img-top"
+        style="height: 290px;"
+      />
       <div class="card-body">
         <p class="card-text">
-          {{gif.title}}
+          {{ gif.title }}
         </p>
       </div>
     </div>
-
+  </div>
+  <div>
+    <button
+      class="btn btn-dark mt-3"
+      [disabled]="page === 0"
+      (click)="prevPage()"
+      *ngIf="resultados.length > 0"
+    >
+      Anteriores
+    </button>
+    &nbsp;
+    <button
+      class="btn btn-dark float-end mt-3"
+      (click)="nextPage()"
+      *ngIf="resultados.length > 0"
+      [disabled]="(resultados | filtro : page : search).length === 0"
+    >
+      Siguientes
+    </button>
   </div>
 </div>
